@@ -1,0 +1,45 @@
+@import url("https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@300;600;800&display=swap");
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.elements {
+  @apply bg-lightModeElements dark:bg-darkModeElements;
+}
+
+.text {
+  @apply text-lightModeText dark:text-darkModeText;
+}
+
+.background {
+  @apply bg-lightModeBg dark:bg-darkModeBg;
+}
+
+.center {
+  @apply container mx-auto max-w-7xl px-4 xl:px-2;
+}
+
+.hover {
+  @apply transition ease-in duration-200;
+}
+
+img {
+  height: 100%;
+  width: 100%;
+  display: block;
+  max-width: 100%;
+  object-fit: cover;
+}
+
+.nation {
+  height: 365px;
+}
+
+.nation div:first-child {
+  height: 48%;
+}
+
+.nation div:last-child {
+  height: 52%;
+}
