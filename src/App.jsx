@@ -8,10 +8,11 @@ import RootLayout from "./layouts/Rootlayout";
 import Home, { HomeLoader } from "./pages/Home";
 import ErrorPage from "./pages/ErrorPage";
 import Details, { detailsLoader } from "./pages/Details";
+import { getTheme } from "./helpers";
 
 const router = createBrowserRouter(
   createRoutesFromElements(
-    <Route path="/" element={<RootLayout />}>
+    <Route path="/" element={<RootLayout />} loader={getTheme}>
       <Route
         index
         element={<Home />}
@@ -24,6 +25,7 @@ const router = createBrowserRouter(
         loader={detailsLoader}
         errorElement={<ErrorPage />}
       />
+      <Route path="*" element={<ErrorPage />} />
     </Route>
   )
 );

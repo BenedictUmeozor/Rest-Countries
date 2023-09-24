@@ -1,13 +1,14 @@
 import { MoonIcon } from "@heroicons/react/24/solid";
 import { useEffect, useState } from "react";
-import { Link, Outlet } from "react-router-dom";
+import { Link, Outlet, useLoaderData } from "react-router-dom";
 
 const RootLayout = () => {
-  const [theme, setTheme] = useState("light");
+  const [theme, setTheme] = useState(useLoaderData());
 
   const toggleTheme = () => {
     const newTheme = theme === "light" ? "dark" : "light";
     setTheme(newTheme);
+    localStorage.setItem("theme", JSON.stringify(newTheme));
   };
 
   useEffect(() => {
@@ -16,6 +17,7 @@ const RootLayout = () => {
     } else {
       document.documentElement.classList.add("dark");
     }
+    localStorage.setItem("theme", JSON.stringify(theme));
   }, [theme]);
 
   return (
@@ -44,9 +46,7 @@ const RootLayout = () => {
         </div>
       </main>
       <footer className="p-5">
-        <div className="mt-5 text-center">
-          &copy; Benedict 2023
-        </div>
+        <div className="mt-5 text-center">&copy; Benedict 2023</div>
       </footer>
     </>
   );
