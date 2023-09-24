@@ -46,7 +46,15 @@ const RootLayout = () => {
         </div>
       </main>
       <footer className="p-5">
-        <div className="mt-5 text-center">&copy; Benedict 2023</div>
+        <div className="mt-5 text-center text-xs text-gray-100">
+          &copy; All rights reserved |{" "}
+          <a
+            target="_blank"
+            rel="noopener noreferrer"
+            href="https://benedictumeozor.vercel.app"
+            className="underline"
+          >Benedict</a>
+        </div>
       </footer>
     </>
   );

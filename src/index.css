@@ -43,3 +43,7 @@ img {
 .nation div:last-child {
   height: 52%;
 }
+
+::-webkit-scrollbar {
+  display: none;
+}
